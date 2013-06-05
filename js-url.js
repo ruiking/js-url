@@ -19,6 +19,7 @@ window.url = (function() {
 	
 	return function url(arg, url) {
 		var _ls = url || window.location.toString();
+         _ls = decodeURI(_ls);
 
 		if(_ls.substring(0,2) === '//') _ls = 'http:' + _ls;
 		else if(_ls.split('://').length === 1) _ls = 'http://' + _ls;
